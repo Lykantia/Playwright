@@ -21,4 +21,10 @@ export class LoginPage {
   async assertLoginSuccess() {
     await expect(this.page.getByText("Swag Labs")).toBeVisible();
   }
+
+get errorMessage() {
+  return this.page.locator('[data-test="error"]');
+}
+
+
 }
