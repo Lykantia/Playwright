@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { normalUser, bannedUser } from '../data/users';
+import { normalUser, bannedUser } from '../data/loginUsers';
 import { LoginPage } from '../pages/LoginPage';
 
 test('Successful login', async ({ page }) => {

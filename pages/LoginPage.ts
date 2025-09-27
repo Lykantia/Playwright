@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { User } from "../data/users";
+import { User } from "../data/loginUsers";
 
 export class LoginPage {
   readonly page: Page;
@@ -28,3 +28,4 @@ get errorMessage() {
 
 
 }
+
