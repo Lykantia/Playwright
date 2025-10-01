@@ -18,3 +18,17 @@ export const bannedUser: User = {
     role: 'user',
     status: 'banned',
 };
+
+export const emptyUser: User = {
+    username: '',
+    password: '',
+    role: 'user',
+    status: 'empty',
+};
+
+export const invalidUser: User = {
+    username: 'Test',
+    password: 'Password',
+    role: 'user',
+    status: 'invalid',
+};
