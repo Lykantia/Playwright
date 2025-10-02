@@ -1,8 +1,13 @@
-import { test, expect } from '@playwright/test';
-import { normalUser, bannedUser, emptyUser, invalidUser } from '../data/loginUsers';
-import { LoginPage } from '../pages/LoginPage';
+import { test, expect } from "@playwright/test";
+import {
+  normalUser,
+  bannedUser,
+  emptyUser,
+  invalidUser,
+} from "../data/loginUsers";
+import { LoginPage } from "../pages/LoginPage";
 
-test('Successful login', async ({ page }) => {
+test("Successful login", async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
@@ -10,7 +15,7 @@ test('Successful login', async ({ page }) => {
   await loginPage.assertLoginSuccess();
 });
 
-test('Banned user login', async ({ page }) => {
+test("Banned user login", async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
@@ -22,7 +27,7 @@ test('Banned user login', async ({ page }) => {
   );
 });
 
-test('Empty login fileds', async ({ page }) => {
+test("Empty login fileds", async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
@@ -34,7 +39,7 @@ test('Empty login fileds', async ({ page }) => {
   );
 });
 
-test('Invalid user login', async ({ page }) => {
+test("Invalid user login", async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
@@ -45,4 +50,3 @@ test('Invalid user login', async ({ page }) => {
     "Epic sadface: Username and password do not match any user in this service"
   );
 });
-
