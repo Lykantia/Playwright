@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { normalUser } from "../data/loginUsers";
 import { LoginPage } from "../pages/LoginPage";
 
-test( "Sorting items lohi", async ({ page }) => {
+test( "Sorting items hilo", async ({ page }) => {
   await page.goto("https://www.saucedemo.com/");
 
   //login
@@ -12,10 +12,10 @@ test( "Sorting items lohi", async ({ page }) => {
   await loginPage.login(normalUser);
   await loginPage.assertLoginSuccess();
 
-  // sorting: Price (low to high)
+  // sorting: Price (high to low)
   await page
     .locator('[data-test="product-sort-container"]')
-    .selectOption("lohi");
+    .selectOption("hilo");
 
   const prices = await page
     .locator('[data-test="inventory-item-price"]')
@@ -26,6 +26,6 @@ test( "Sorting items lohi", async ({ page }) => {
   );
 
   for (let i = 0; i < numericPrices.length - 1; i++) {
-    expect(numericPrices[i]).toBeLessThanOrEqual(numericPrices[i + 1]);
+    expect(numericPrices[i]).toBeGreaterThanOrEqual(numericPrices[i + 1]);
   }
 });
