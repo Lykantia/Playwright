@@ -24,5 +24,57 @@ npx playwright show-report
 
 
 ---
+## Project Structure
+
+<pre> 
+pages/ 
+ ├── loginPage.ts
+ ├── inventoryPage.ts
+ ├── CartPage.ts
+ ├── CheckoutPage.ts
+
+tests/
+ ├── basicUserJourney.test.ts
+ ├── numberOfItemsInCart.test.ts
+ ├── login.test.ts
+ ├── priceCheck.test.ts
+ ├── sortingHilo.test.ts
+ ├── sortingLohi.test.ts
+ ├── verifyPricesPom.test.ts
+
+data/
+ ├── checkout.ts
+ ├── loginUser.ts
+playwright.config.ts
+package.json
+
+</pre>
+--- 
+
+## Covered scenarios 
+
+### Login tests: 
+- Successful login using valid credentials
+- Handling of incorrect login credentials
+- Display of correct error messages
+
+### Basic User Journey:
+- User Login
+- Add item(s) in Cart
+- Verification of the number of items in the cart
+- Display of the order summary
+
+### Validation of the basket contents
+- Correct display of added products
+- Comparison of prices and quantities
+
+---
+
+## What I learned in the project
+
+- Working with Page Object Model and its advantages
+- Using Playwright Test Runner and playwright.config.ts
+- Structuring tests for better readability and reusability
+- Basics of working with Git and GitHub (committing, creating new branches, PR, writing Read me and using Markdow :D)
 
 
