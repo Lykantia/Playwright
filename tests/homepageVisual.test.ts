@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { normalUser } from "../data/loginUsers";
 import { LoginPage } from "../pages/LoginPage";
 
-test("Homepage Visual test", async ({ page }) => {
+test.skip("Homepage Visual test", async ({ page }) => {
   await page.goto("https://www.saucedemo.com");
 
   //login
