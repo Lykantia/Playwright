@@ -15,6 +15,8 @@ test("Verify prices of two selected items in the cart", async ({ page }) => {
   await loginPage.assertLoginSuccess();
 
   // Dashboard prices 
+  // IMHO: I am not huge fan to this approach - to hide assertion in the page object
+  // it should be easy to see from the test what is expected and what is actual (how do you test it)
   await inventoryPage.verifyItemPrice("Sauce Labs Backpack", "$29.99");
   await inventoryPage.verifyItemPrice("Sauce Labs Bike Light", "$9.99");
 

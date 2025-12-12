@@ -8,11 +8,14 @@ import {
 } from "../data/loginUsers";
 
 test.describe("Login tests", () => {
+  // I would say "should be login successful with valid credentials"
   test("Successful login", async ({ loginPage }) => {
     await loginPage.login(normalUser);
     await loginPage.assertLoginSuccess();
   });
 
+  // I would say "should fail and display error message for banned user"
+  // Also - Should you check, if you are still on the login page, not the "successful login" page?
   test("Banned user login", async ({ loginPage }) => {
     await loginPage.login(bannedUser);
     await expect(loginPage.errorMessage).toHaveText(

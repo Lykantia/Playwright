@@ -22,10 +22,7 @@ export class LoginPage {
     await expect(this.page.getByText("Swag Labs")).toBeVisible();
   }
 
-get errorMessage() {
-  return this.page.locator('[data-test="error"]');
+  get errorMessage() {
+    return this.page.locator('[data-test="error"]');
+  }
 }
-
-
-}
-

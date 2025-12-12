@@ -5,6 +5,7 @@ import { LoginPage } from "../pages/LoginPage";
 test("Verify that selected items have expected prices in the cart", async ({ page }) => {
   
   // Login
+  // This block should be in "before" hook
   const loginPage = new LoginPage(page);
   await loginPage.goto();
   await loginPage.login(normalUser);
@@ -13,6 +14,7 @@ test("Verify that selected items have expected prices in the cart", async ({ pag
   const backpack = page.locator('[data-test="inventory-item"]', { hasText: "Sauce Labs Backpack" });
   const bikeLight = page.locator('[data-test="inventory-item"]', { hasText: "Sauce Labs Bike Light" });
 
+  // nice chaining
   await expect(backpack.locator('[data-test="inventory-item-price"]')).toHaveText("$29.99");
   await expect(bikeLight.locator('[data-test="inventory-item-price"]')).toHaveText("$9.99");
 
@@ -32,4 +34,3 @@ test("Verify that selected items have expected prices in the cart", async ({ pag
   // Item(s) Check
   expect(cartPrices.length).toBe(2);
 });
-
