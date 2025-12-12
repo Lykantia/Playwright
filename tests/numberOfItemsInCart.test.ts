@@ -22,6 +22,9 @@ test("Number of items in cart", async ({ page }) => {
   const addButtons = page.locator(addSelector);
   await expect(addButtons.first()).toBeVisible();
 
+  // What if the page has more than 6 items? Would be better to use for loop with limit (6) 
+  // Or if you want to add all, you should also update badge count - that badge should be updated after each add
+  // Like: let badgeCount = 0; in loop badgeCount++;
   while ((await addButtons.count()) > 0) {
     const btn = addButtons.first();
     await btn.scrollIntoViewIfNeeded(); 
@@ -29,6 +32,6 @@ test("Number of items in cart", async ({ page }) => {
     await btn.click();
     await page.waitForTimeout(100); 
   }
-
+  // await expect(badge).toHaveText(badgeCount.toString());
   await expect(badge).toHaveText("6");
 });

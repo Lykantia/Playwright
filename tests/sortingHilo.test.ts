@@ -2,6 +2,8 @@ import { test, expect } from "@playwright/test";
 import { normalUser } from "../data/loginUsers";
 import { LoginPage } from "../pages/LoginPage";
 
+
+// Better naming would be great :) 
 test( "Sorting items hilo", async ({ page }) => {
   await page.goto("https://www.saucedemo.com/");
 
@@ -25,6 +27,8 @@ test( "Sorting items hilo", async ({ page }) => {
     parseFloat(price.replace("$", ""))
   );
 
+  // Can you find different approach to check if prices are sorted correctly? 
+  // Hint: You can use just one assertion
   for (let i = 0; i < numericPrices.length - 1; i++) {
     expect(numericPrices[i]).toBeGreaterThanOrEqual(numericPrices[i + 1]);
   }
